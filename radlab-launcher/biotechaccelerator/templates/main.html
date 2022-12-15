@@ -1,32 +1,46 @@
-<html>
-    <head/>
+<!doctype html>
+<html>    
+    <head>
+        {{ turbo() }}
+    </head>        
+    <style>
+        .wrapper {
+            padding: 20px;
+            margin: 15px 0;
+            background-color: #0f9d58;
+        }
+        table {
+            font-size: 20px;
+            width: 100%;
+        }
+ 
+        textarea {
+            font-size: 20px;
+            width: 100%;
+        } 
+    </style>
     <body>
-        <table celpadding=10 cellspacing=10 border=1>
+        <table celpadding=10 cellspacing=10 border=1 width='100%'>
             <tr>
-                <td align="center">                                        
-                    <br/>
-                    <a href="https://drive.google.com/file/d/1-js3vyoXa3Y7Fza8lx4Or1ZWijHTl2CD/view?usp=sharing&resourcekey=0-iU4F7lJ0L9imN2HtV0cDxQ">Video</a>                    
-                    <br/>
+                <td align="center">                                                            
                     <a href="/data_science">
                         Data Science                    
                         <br/>
-                        <img width=244 height=133 src="https://lh3.googleusercontent.com/t1u2HDVqUMQU2NmizReFVAslFfJQ3ofg9VHKAOWypsb2J8qmchcXxrH2NOM8-4h-p9lmBz8m9WgFgx91a1NyCPjL8axCVFT1VBQ-Dn8c9rFmqOm-4zp-C4Ietng3_ff52OFJQugMdxMFj2kd2mfIpMHikxGyjLBqZa3tApoaoXzdqN5fGqAjbcWm9Z1sAolX=w1280" />                                                
-                    </a>
-                    <br/>
-                    <br/>
-                    <textarea id="output" name="output" rows="4" cols="30" >INSTALLATION OUTPUT...</textarea>
+                        <a href="https://drive.google.com/file/d/1-js3vyoXa3Y7Fza8lx4Or1ZWijHTl2CD/view?usp=sharing&resourcekey=0-iU4F7lJ0L9imN2HtV0cDxQ">Video</a>                    
+                        <br/>
+                        <img width=244 height=133 src="https://lh6.googleusercontent.com/HWoW_yaVjYTo_F7K9I5IhXIakMzzHBTo1mnfBTNnuhoSbJluaO1YKZtIM00TkH8AiOswkrLyeKDrPrHTQuIb5-tjnahvIl8_PODAsNA-A25agoLXj1srnJWZ4AcpdzQnxTr7AcrSt7DCD4VSMpTXnzfQSrbiDTiu7PlBf9z6oFF8xXTVprCOfeIgxl51juH9=w1280" />                                                
+                    </a> 
                 </td>
-                <td align="center">      
-                    <br/>
-                    <br/>
+                <td align="center">                          
                     <a href="/alphafold">
                         Alphafold
                         <br/>
-                        <img width=244 height=133 src="https://lh5.googleusercontent.com/bU2FN5vkoZPoOPy88dPmTXUx-0hM2FeRzAGuV9hHf0rIOB3aPol8HwCPH5kz5lr3F1VLq9aXpstEALabsOHLlrXMXB2iKUN_1TPFy3klQMCVIVm9sFXmKvt61N5ufyTGgNbnAbpMOrSbQtHhyuq56_Hbz9xcykSE05ny3oiiXIj2CRWs9mLEctCRJ9q0hpT6=w1280" />
-                    </a>
-                    <br/>
-                    <br/>
-                    <textarea id="output" name="output" rows="4" cols="30" >INSTALLATION OUTPUT...</textarea>
+                        <img width=244 height=133 src="https://lh3.googleusercontent.com/DQUvf9FugBNfu6cXN1GL6BRaldHXhzWbAaT9n8Pxmpt-td3btef4fF82GndIJr8UW9lECHDYq40U6TaNar84_hS4DiJGbFcQYqjTsXfujIHAJbheawjJmxG6AXis6rCzTTyiWRLo-gbudZHkR2bvPPBbBJ6OvZpeuqPj5rR-3AV5f4BtwqPRhOm_xZakv2Yr=w1280" />
+                    </a>                                        
+                </td>
+            </tr>
+            <tr><td colspan=2 width="100%" valign="top">
+                    {% include "messages.html" %}
                 </td>
             </tr>
         </table>
