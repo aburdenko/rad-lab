@@ -50,14 +50,14 @@ yarn-error.log*
 
 # Terraform files
 terraform.tfvars
-**/.terraform/**
+**/.terraform*
 **/backend.tf
 *.tfstate
 *.tfstate.*
 *.lock.hcl
+*.out
 
 venv
-**/.terraform/*
 crash.log
 credentials.json
 .vscode/
@@ -65,6 +65,7 @@ env/
 .envrc
 elk/
 test/**
+**/kms_helper_venv
 
 # Zip files for function code
 *.zip
@@ -76,3 +77,10 @@ radlab-launcher/deployments/*
 
 terraform.tfvars
 backend.tf
+
+staging.terraform.tfbackend
+terraform.tfvars.staging
+
+app.yaml
+modules/secure_data_warehouse/templates/schema.tpl
+modules/secure_data_warehouse/templates/deidentification.tpl

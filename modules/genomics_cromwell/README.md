@@ -1,14 +1,7 @@
 # RAD Lab Genomics-Cromwell Module
 
-## GCP Products/Services 
+## Module Overview
 
-* Life Sciences API
-* Cloud Compute
-* CloudSQL
-* Cloud Storage
-* Virtual Private Cloud (VPC)
-
-## Module Overview 
 Cromwell is a Workflow Management System geared towards scientific workflows. Cromwell is open sourced under the BSD 3-Clause license. Checkout Cromwell documentation at [https://cromwell.readthedocs.io/](https://cromwell.readthedocs.io/)
 
 The RAD Lab Genomics module deploys Cromwell server along with a a CloudSQL instance and adds a firewall rule enabling access to the server through IAP Tunnel.
@@ -28,11 +21,20 @@ Once you run the command above simply click on the web preview button in the top
 * On your local device
 You can start an IAP tunnel on your local device from the terminal and then from the broswer browse to http://localhost:8080 . This would also work on Chromebooks with running the command from the Linux container, note that port 8080 is already mapped to localhost, so you only need to browse to  http://localhost:8080. you can also use CLI as shown above.
 
+## GCP Products/Services 
+
+* Life Sciences API
+* Cloud Compute
+* CloudSQL
+* Cloud Storage
+* Virtual Private Cloud (VPC)
+* Billing Budget
+
 ## Reference Architecture Diagram
 
 Below Architechture Diagram is the base representation of what will be created as a part of [RAD Lab Launcher](../../radlab-launcher/radlab.py).
 
-![](../../docs/images/V4_Genomics_Cromwell.png)
+![](./images/architecture.png)
 
 ## API Prerequisites
 
@@ -97,7 +99,7 @@ _Usage:_
 | *cromwell_db_name* | The name of the SQL Database instance | <code title="">string</code> |  | <code title="">cromwelldb</code> |
 | *cromwell_db_tier* | CloudSQL tier, please refere to the documentation at https://cloud.google.com/sql/docs/mysql/instance-settings#machine-type-2ndgen | <code title="">string</code> |  | <code title="">db-n1-standard-2</code> |
 | *cromwell_port* | Port Cromwell server will use for the REST API and web user interface | <code title="">string</code> |  | <code title="">8000</code> |
-| *cromwell_sa_roles* | List of roles granted to the cromwell service account. This server account will be used to run both the Cromwell server and workers as well | <code title="list&#40;any&#41;">list(any)</code> |  | <code title="&#91;&#10;&#34;roles&#47;lifesciences.workflowsRunner&#34;,&#10;&#34;roles&#47;serviceusage.serviceUsageConsumer&#34;,&#10;&#34;roles&#47;storage.objectAdmin&#34;,&#10;&#34;roles&#47;cloudsql.client&#34;,&#10;&#34;roles&#47;browser&#34;&#10;&#93;">...</code> |
+| *cromwell_sa_roles* | List of roles granted to the cromwell service account. This server account will be used to run both the Cromwell server and workers as well | <code title="list&#40;any&#41;">list(any)</code> |  | <code title="">["roles/lifesciences.workflowsRunner", "roles/serviceusage.serviceUsageConsumer", "roles/storage.objectAdmin", "roles/cloudsql.client", "roles/browser"]</code> |
 | *cromwell_server_instance_name* | Name of the VM instance that will be used to deploy Cromwell Server, this should be a valid Google Cloud instance name | <code title="">string</code> |  | <code title="">cromwell-server</code> |
 | *cromwell_server_instance_type* | Cromwell server instance type | <code title="">string</code> |  | <code title="">e2-standard-4</code> |
 | *cromwell_version* | Cromwell version that will be downloaded, for the latest release version, please check https://github.com/broadinstitute/cromwell/releases for the latest releases | <code title="">string</code> |  | <code title="">72</code> |

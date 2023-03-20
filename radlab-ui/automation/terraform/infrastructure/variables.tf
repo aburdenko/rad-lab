@@ -1,5 +1,5 @@
 /**
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -137,12 +137,6 @@ variable "git_ref" {
   description = "What ref should be built by the Cloud Build trigger."
   type        = string
   default     = "refs/heads/main"
-}
-
-variable "git_repo_branch" {
-  description = "Branch that should be used to build the modules."
-  type        = string
-  default     = "^main$"
 }
 
 variable "git_repo_access_token" {

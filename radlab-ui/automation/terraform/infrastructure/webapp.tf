@@ -1,5 +1,5 @@
 /**
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,8 @@ resource "google_project_iam_member" "webapp_identity_permissions" {
     "roles/iam.serviceAccountTokenCreator",
     "roles/datastore.user",
     "roles/storage.admin", #TODO: Only give permissions to the deployment bucket
-    "roles/cloudbuild.builds.viewer"
+    "roles/cloudbuild.builds.viewer",
+    "roles/compute.viewer"
   ])
   project = module.project.project_id
   member  = "serviceAccount:${google_service_account.radlab_ui_webapp_identity.email}"

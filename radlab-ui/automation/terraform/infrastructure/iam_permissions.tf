@@ -1,5 +1,5 @@
 /**
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -136,7 +136,7 @@ resource "google_project_iam_member" "super_admin_permissions" {
 }
 
 resource "google_billing_account_iam_member" "super_admin_billing_permissions" {
-  for_each           = var.super_admins
+  for_each           = var.set_billing_permissions ? var.super_admins : []
   member             = each.value
   billing_account_id = var.billing_account_id
   role               = "roles/billing.admin"

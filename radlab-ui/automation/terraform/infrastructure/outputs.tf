@@ -1,5 +1,5 @@
 /**
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,6 +48,10 @@ output "git_personal_access_token_secret_id" {
 
 output "git_repo_url" {
   value = var.git_repo_url
+}
+
+output "git_repo_branch" {
+  value = element(split("/", var.git_ref), length(split("/", var.git_ref)) - 1)
 }
 
 output "module_deployment_bucket_name" {

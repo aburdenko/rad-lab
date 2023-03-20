@@ -1,10 +1,12 @@
 # RAD Lab NEON Module
 
+## Module Overview
+
 This RAD Lab module provides a managed environment for research and data analytics on publicly shared data of the National Ecological Observatory Network (NEON) by subscribing to NEON Big Query dataset via Analytics Hub and exploring it via Jupyter Notebook(s) running over Vertex AI workbench.
 
 ## GCP Products/Services 
 
-* Vertex AI Workbench Notebooks (a.k.a. AI Platform Notebooks)
+* Vertex AI Workbench Notebooks
 * Virtual Private Cloud (VPC)
 * BigQuery
 * Analytics Hub
@@ -15,7 +17,7 @@ This RAD Lab module provides a managed environment for research and data analyti
 
 Below Architechture Diagram is the base representation of what will be created as a part of [RAD Lab Launcher](../../radlab-launcher/radlab.py).
 
-![](../../docs/images/V9_NEON.png)
+![](./images/architecture.png)
 
 We provide Neon Jupyter Notebooks as part of Neon module deployment. If you would like to include your own Jupyter Notebooks add them into [scripts/build/notebooks](./scripts/build/notebooks) folder and then run the deployment. You will be able to access your Jupyter notebooks from the Vertex AI Workbench Notebook created as part of the deployment.
 
@@ -70,7 +72,7 @@ _Usage:_
 | billing_account_id | Billing Account associated to the GCP Resources | <code title="">string</code> | ✓ |  |
 | *ah_data_exchange_id* | Analytics Hub : Data Exchange ID (shared with `allauthenticated` users) | <code title="">string</code> |  | <code title="">National_Ecological_Observatory_Network_NEON_pilot</code> |
 | *ah_data_exchange_location* | Analytics Hub : Data Exchange Location | <code title="">string</code> |  | <code title="">us-central1</code> |
-| *ah_listing_dataset_map* | Analytics Hub : Listing ID and Linked Dataset display name key value pair | <code title="map&#40;string&#41;">map(string)</code> |  | <code title="&#123;&#10;&#34;neon_chemical_properties_of_surface_water&#34; &#61; &#34;neon_chemical_properties_of_surface_water&#34;,&#10;&#34;neon_continuous_discharge&#34;                 &#61; &#34;neon_continuous_discharge&#34;&#10;&#125;">...</code> |
+| *ah_listing_dataset_map* | Analytics Hub : Listing ID and Linked Dataset display name key value pair | <code title="map&#40;string&#41;">map(string)</code> |  | <code title="">{"neon_chemical_properties_of_surface_water" = "neon_chemical_properties_of_surface_water", "neon_continuous_discharge" = "neon_continuous_discharge"}</code> |
 | *ah_project_id* | Analytics Hub : Project ID (associated to the data exchange & listing) | <code title="">string</code> |  | <code title="">neon-nonprod-bq-datasets</code> |
 | *billing_budget_alert_spend_basis* | The type of basis used to determine if spend has passed the threshold | <code title="">string</code> |  | <code title="">CURRENT_SPEND</code> |
 | *billing_budget_alert_spent_percents* | A list of percentages of the budget to alert on when threshold is exceeded | <code title="list&#40;number&#41;">list(number)</code> |  | <code title="">[0.5, 0.7, 1]</code> |

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright 2022 Google LLC
+# Copyright 2023 Google LLC
 # 
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -35,9 +35,9 @@ INSERT INTO accounts (name, email, sector)
 VALUES
     ('Kris Marrier','kris@myfoo.gov','Federal'),
     ('Fatima Saylors','fsaylors@myfoo.gov','State & Local'),
-    ('James Butt','jbutt@gmail.com','EdTech'),
+    ('James Baker','jbaker@baz.edu','EdTech'),
     ('Jose Stockham','jose@mybar.gov','State & Local'),
-    ('Tonette Wenner','twenner@aol.com','EdTech');
+    ('Tonette Williams','twilliams@myqux.edu','EdTech');
 \x
 SELECT * FROM accounts;
 EOF
